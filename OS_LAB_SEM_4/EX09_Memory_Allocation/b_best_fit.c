@@ -1,71 +1,44 @@
-/*
- * Name    : Sandeep Kumar Bollavaram
- * Reg No  : 11249A040
- * Email   : 11249A040@kanchiuniv.ac.in
- * Ex No   : 9b — Memory Allocation: Best Fit
- */
+// Sandeep Kumar  11249A040
+// best fit memory allocation
 
-#include <stdio.h>
+#include<stdio.h>
 
-int main() {
-    int nb, np, i, j, best;
-    int block[10], process[10], alloc[10];
+int main()
+{
+    int nb,np,i,j,best;
+    int b[10],p[10],al[10];
 
-    printf("Enter number of memory blocks: ");
-    scanf("%d", &nb);
-    printf("Enter block sizes:\n");
-    for (i = 0; i < nb; i++) {
-        printf("Block %d: ", i + 1);
-        scanf("%d", &block[i]);
+    printf("blocks : "); scanf("%d",&nb);
+    for(i=0;i<nb;i++){
+        printf("b[%d]= ",i+1);
+        scanf("%d",&b[i]);
+    }
+    printf("processes : "); scanf("%d",&np);
+    for(i=0;i<np;i++){
+        printf("p[%d]= ",i+1);
+        scanf("%d",&p[i]);
+        al[i]=-1;
     }
 
-    printf("Enter number of processes: ");
-    scanf("%d", &np);
-    printf("Enter process sizes:\n");
-    for (i = 0; i < np; i++) {
-        printf("Process %d: ", i + 1);
-        scanf("%d", &process[i]);
-        alloc[i] = -1;
-    }
-
-    /* Best Fit: allocate smallest block that is large enough */
-    for (i = 0; i < np; i++) {
-        best = -1;
-        for (j = 0; j < nb; j++) {
-            if (block[j] >= process[i]) {
-                if (best == -1 || block[j] < block[best])
-                    best = j;
+    for(i=0;i<np;i++){
+        best=-1;
+        for(j=0;j<nb;j++){
+            if(b[j]>=p[i]){
+                if(best==-1 || b[j]<b[best])
+                    best=j;
             }
         }
-        if (best != -1) {
-            alloc[i]     = best;
-            block[best] -= process[i];
+        if(best!=-1){
+            al[i]=best;
+            b[best]-=p[i];
         }
     }
 
-    printf("\n--- Best Fit Allocation ---\n");
-    printf("Process\tSize\tAllocated Block\n");
-    for (i = 0; i < np; i++) {
-        printf("P%d\t%d\t", i + 1, process[i]);
-        if (alloc[i] != -1)
-            printf("Block %d\n", alloc[i] + 1);
+    for(i=0;i<np;i++){
+        if(al[i]!=-1)
+            printf("P%d(%d) -> block %d\n",i+1,p[i],al[i]+1);
         else
-            printf("Not Allocated\n");
+            printf("P%d(%d) -> not alloc\n",i+1,p[i]);
     }
-
     return 0;
 }
-
-/*
- * Sample Input:
- * Blocks: 5  →  sizes: 100 500 200 300 600
- * Processes: 4  →  sizes: 212 417 112 426
- *
- * Sample Output:
- * --- Best Fit Allocation ---
- * Process  Size  Allocated Block
- * P1       212   Block 4
- * P2       417   Block 2
- * P3       112   Block 3
- * P4       426   Block 5
- */

@@ -1,68 +1,40 @@
-/*
- * Name    : Sandeep Kumar Bollavaram
- * Reg No  : 11249A040
- * Email   : 11249A040@kanchiuniv.ac.in
- * Ex No   : 7c — CPU Scheduling: SJF (Shortest Job First)
- */
+/* Sandeep Kumar Bollavaram - 11249A040 */
+#include<stdio.h>
 
-#include <stdio.h>
+int main()
+{
+	int n,i,j,t,pid[10],bt[10],wt[10],tat[10];
+	float aw=0,at=0;
 
-int main() {
-    int n, i, j, temp;
-    int bt[10], wt[10], tat[10], p[10];
-    float total_wt = 0, total_tat = 0;
+	printf("enter n : ");
+	scanf("%d",&n);
+	for(i=0;i<n;i++){
+		printf("P%d burst : ",i+1);
+		scanf("%d",&bt[i]);
+		pid[i]=i+1;
+	}
 
-    printf("Enter number of processes: ");
-    scanf("%d", &n);
+	// sort by burst time
+	for(i=0;i<n-1;i++){
+		for(j=0;j<n-1-i;j++){
+			if(bt[j]>bt[j+1]){
+				t=bt[j]; bt[j]=bt[j+1]; bt[j+1]=t;
+				t=pid[j]; pid[j]=pid[j+1]; pid[j+1]=t;
+			}
+		}
+	}
 
-    printf("Enter burst times:\n");
-    for (i = 0; i < n; i++) {
-        printf("P%d: ", i + 1);
-        scanf("%d", &bt[i]);
-        p[i] = i + 1;
-    }
+	wt[0]=0;
+	for(i=1;i<n;i++)
+		wt[i]=wt[i-1]+bt[i-1];
+	for(i=0;i<n;i++)
+		tat[i]=wt[i]+bt[i];
 
-    /* Sort by burst time (bubble sort), carry process labels along */
-    for (i = 0; i < n - 1; i++) {
-        for (j = i + 1; j < n; j++) {
-            if (bt[i] > bt[j]) {
-                temp  = bt[i]; bt[i] = bt[j]; bt[j] = temp;
-                temp  = p[i];  p[i]  = p[j];  p[j]  = temp;
-            }
-        }
-    }
-
-    wt[0] = 0;
-    for (i = 1; i < n; i++)
-        wt[i] = wt[i - 1] + bt[i - 1];
-
-    for (i = 0; i < n; i++)
-        tat[i] = wt[i] + bt[i];
-
-    printf("\nProcess\tBurst Time\tWaiting Time\tTurnaround Time\n");
-    for (i = 0; i < n; i++) {
-        printf("P%d\t%d\t\t%d\t\t%d\n", p[i], bt[i], wt[i], tat[i]);
-        total_wt  += wt[i];
-        total_tat += tat[i];
-    }
-
-    printf("\nAverage Waiting Time    : %.2f\n", total_wt / n);
-    printf("Average Turnaround Time : %.2f\n", total_tat / n);
-
-    return 0;
+	printf("\nP  BT  WT  TAT\n");
+	for(i=0;i<n;i++){
+		printf("P%d %d  %d  %d\n",pid[i],bt[i],wt[i],tat[i]);
+		aw+=wt[i]; at+=tat[i];
+	}
+	printf("avg wt=%.2f  avg tat=%.2f\n",aw/n,at/n);
+	return 0;
 }
-
-/*
- * Sample Input:
- * Enter number of processes: 3
- * P1: 6   P2: 2   P3: 8
- *
- * Sample Output:
- * Process  Burst Time  Waiting Time  Turnaround Time
- * P2       2           0             2
- * P1       6           2             8
- * P3       8           8             16
- *
- * Average Waiting Time    : 3.33
- * Average Turnaround Time : 8.67
- */

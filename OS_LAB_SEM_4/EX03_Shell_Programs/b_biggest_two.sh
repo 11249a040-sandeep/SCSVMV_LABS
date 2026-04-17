@@ -1,27 +1,18 @@
 #!/bin/bash
-# Name    : Sandeep Kumar Bollavaram
-# Reg No  : 11249A040
-# Email   : 11249A040@kanchiuniv.ac.in
-# Ex No   : 3b — Shell Program: Biggest of Two Numbers
+# Sandeep Kumar  Reg: 11249A040
+# biggest of 2 numbers
 
-echo "Enter first number:"
+echo "enter a :"
 read a
-echo "Enter second number:"
+echo "enter b :"
 read b
 
 if [ $a -gt $b ]
 then
-    echo "Biggest number is $a"
-elif [ $b -gt $a ]
+    echo "biggest = $a"
+elif [ $a -lt $b ]
 then
-    echo "Biggest number is $b"
+    echo "biggest = $b"
 else
-    echo "Both numbers are equal"
+    echo "both equal"
 fi
-
-# Sample Output:
-# Enter first number:
-# 45
-# Enter second number:
-# 23
-# Biggest number is 45

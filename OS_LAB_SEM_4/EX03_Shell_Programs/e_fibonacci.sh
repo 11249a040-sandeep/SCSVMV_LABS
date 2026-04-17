@@ -1,35 +1,20 @@
 #!/bin/bash
-# Name    : Sandeep Kumar Bollavaram
-# Reg No  : 11249A040
-# Email   : 11249A040@kanchiuniv.ac.in
-# Ex No   : 3e — Shell Program: Fibonacci Series
+# Sandeep Kumar Bollavaram
+# 11249A040
 
-echo "Enter number of terms:"
+echo "how many terms :"
 read n
 
 a=0
 b=1
+i=1
 
-echo "Fibonacci Series:"
-echo $a
-echo $b
-
-for (( i=2; i<n; i++ ))
+echo "fibonacci :"
+while [ $i -le $n ]
 do
-    c=$((a + b))
-    echo $c
+    echo $a
+    c=`expr $a + $b`
     a=$b
     b=$c
+    i=`expr $i + 1`
 done
-
-# Sample Output:
-# Enter number of terms:
-# 7
-# Fibonacci Series:
-# 0
-# 1
-# 1
-# 2
-# 3
-# 5
-# 8

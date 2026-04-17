@@ -1,24 +1,12 @@
 #!/bin/bash
-# Name    : Sandeep Kumar Bollavaram
-# Reg No  : 11249A040
-# Email   : 11249A040@kanchiuniv.ac.in
-# Ex No   : 3a — Shell Program: Even or Odd
+#sandeep 11249A040
 
-echo "Enter a number:"
-read n
+read -p "enter number : " n
+rem=$((n%2))
 
-if [ $((n % 2)) -eq 0 ]
+if [ $rem -eq 0 ]
 then
-    echo "The number $n is Even"
+echo "$n is even"
 else
-    echo "The number $n is Odd"
+echo "$n is odd"
 fi
-
-# Sample Output:
-# Enter a number:
-# 7
-# The number 7 is Odd
-#
-# Enter a number:
-# 4
-# The number 4 is Even

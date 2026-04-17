@@ -1,27 +1,17 @@
 #!/bin/bash
-# Name    : Sandeep Kumar Bollavaram
-# Reg No  : 11249A040
-# Email   : 11249A040@kanchiuniv.ac.in
-# Ex No   : 3c — Shell Program: Biggest of Three Numbers
+#name:sandeep  regno:11249A040
 
-echo "Enter three numbers:"
-read a
-read b
-read c
+echo enter three numbers
+read x
+read y
+read z
 
-if [ $a -gt $b ] && [ $a -gt $c ]
+if [ $x -ge $y ] && [ $x -ge $z ]
 then
-    echo "Biggest number is $a"
-elif [ $b -gt $c ]
+    echo "biggest is $x"
+elif [ $y -ge $z ]
 then
-    echo "Biggest number is $b"
+    echo "biggest is $y"
 else
-    echo "Biggest number is $c"
+    echo "biggest is $z"
 fi
-
-# Sample Output:
-# Enter three numbers:
-# 12
-# 47
-# 35
-# Biggest number is 47
