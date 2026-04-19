@@ -72,5 +72,13 @@ Fibonacci Series:
 
 ---
 
+## Output Screenshots
+
+![output all scripts](screenshots/05_output_all_scripts.png)
+![fibonacci and biggest three](screenshots/06_output_fibonacci_biggest3.png)
+![biggest three clean](screenshots/07_output_biggest_three_clean.png)
+
+---
+
 ## Result
 All shell programs were executed successfully.

@@ -83,6 +83,16 @@ process monitoring, text file operations, and file permission handling.
 
 ---
 
+## Output Screenshots
+
+![pwd ls mkdir touch cp](screenshots/01_pwd_ls_mkdir_touch_cp.png)
+![os-release ps df](screenshots/02_os_release_ps_df.png)
+![df free whoami chmod](screenshots/03_df_free_whoami_chmod.png)
+![text cmds mv stat cd rmdir](screenshots/04_text_cmds_mv_stat_cd_rmdir.png)
+![who umask chown](screenshots/05_who_umask_chown.png)
+
+---
+
 ## Result
 Linux commands for file/directory management, process monitoring, text processing,
 and file permission handling were successfully practiced and executed.
