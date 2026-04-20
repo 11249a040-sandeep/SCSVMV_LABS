@@ -105,6 +105,16 @@ grep -o "Linux" file.txt | wc -l
 
 ---
 
+## Output Screenshots
+
+![pipe grep](screenshots/01_pipe_grep.png)
+![ps root processes](screenshots/02_ps_root_processes.png)
+![awk processing](screenshots/03_awk_processing.png)
+![sed combined](screenshots/04_sed_combined.png)
+![combined output](screenshots/05_combined_output.png)
+
+---
+
 ## Result
 Linux pipes and filter commands — grep, awk, and sed — were successfully practiced
 to process and manipulate text data.
