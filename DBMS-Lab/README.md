@@ -24,6 +24,34 @@ Password: OracleLab123
 
 Stop the database with `docker compose down`. Use `docker compose down -v` only when you want to delete the stored database data.
 
+## Keep program outputs
+
+Run all experiments and save their SQL*Plus/SQLcl output to individual files:
+
+```bash
+sqlplus SYSTEM/OracleLab123@localhost:1521/FREEPDB1 @run_outputs.sql
+```
+
+The captured results are written to `EXP-1/output.md` through
+`EXP-11/output.md`, alongside the program for each experiment.
+Run this command from the `DBMS-Lab` directory after starting the database. The
+output files are intentionally generated locally because they include the
+database client's formatting and the current database state.
+
+### Local SQLite fallback
+
+When Oracle is unavailable, generate equivalent checked-in-style output with
+Python's built-in SQLite support:
+
+```bash
+python3 generate_sqlite_outputs.py
+```
+
+This writes Markdown files `EXP-1/output.md` through `EXP-11/output.md`,
+alongside each experiment program. The Oracle scripts are preserved unchanged;
+Oracle-only DCL and PL/SQL features are represented by documented local
+equivalents.
+
 ## Experiments
 
 Each experiment directory contains the executable SQL or PL/SQL program and a short theory/procedure note. Run scripts in numerical order when an experiment has multiple files.

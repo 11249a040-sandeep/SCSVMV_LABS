@@ -14,7 +14,8 @@ This record contains the requested Java laboratory exercises. Each experiment fo
 6. [Interfaces: Student Details and Shapes](EXP-6/)
 7. [Inheritance: Account and College Details](EXP-7/)
 8. [Threads](EXP-8/)
-10. [File Handling](EXP-10/)
+9. [File Handling](EXP-9/)
+10. [AWT Applets](EXP-10/)
 
 ## Compile and Run
 
@@ -32,7 +33,18 @@ javac -d build EXP-1/*.java EXP-2/*.java EXP-3/*.java EXP-4/*.java \
 	EXP-5/5.a/div/*.java EXP-5/5.a/ArithDemo.java \
 	EXP-5/5.b/Shape/*.java EXP-5/5.b/Calculate.java \
 	EXP-6/6.a/*.java EXP-6/6.b/*.java EXP-7/7.a/*.java EXP-7/7.b/*.java \
-	EXP-8/8.a/*.java EXP-8/8.b/*.java EXP-10/10.a/*.java EXP-10/10.b/*.java
+	EXP-8/8.a/*.java EXP-8/8.b/*.java EXP-9/9.a/*.java EXP-9/9.b/*.java
+```
+
+File handling can be run from its subexperiment directory:
+
+```bash
+cd java_lab/EXP-9/9.b
+javac WriteFile.java
+java WriteFile
+cd ../9.a
+javac ReadFile.java
+java ReadFile
 ```
 
 Experiment 5.a can be compiled with:

@@ -2,7 +2,8 @@
 
 Academic Year: 2026-2027
 
-This virtual record follows the ten exercises in the laboratory manual. Each experiment has its own folder containing `theory.md` and a practical/program file.
+This virtual record follows the ten exercises in the laboratory manual. Each experiment has its own folder containing `theory.md`, a practical/program
+file, and an `output.md` preview record.
 
 ## Experiments
 
@@ -16,6 +17,24 @@ This virtual record follows the ten exercises in the laboratory manual. Each exp
 8. [Charts, Graphs, and Data Mapping](08-tableau-charts-maps/)
 9. [Basic Dashboards](09-dashboards/)
 10. [Storytelling in Tableau](10-storytelling/)
+
+## Output previews
+
+Open any experiment's `output.md` in VS Code and use **Markdown: Open
+Preview** (or `Ctrl+Shift+V`) to view its result record. The complete index is:
+
+| Experiment | Preview |
+| --- | --- |
+| 1 | [output.md](01-introduction-tools/output.md) |
+| 2 | [output.md](02-python-visualization/output.md) |
+| 3 | [output.md](03-r-visualization/output.md) |
+| 4 | [output.md](04-tableau-installation/output.md) |
+| 5 | [output.md](05-data-preparation/output.md) |
+| 6 | [output.md](06-aggregation-statistics/output.md) |
+| 7 | [output.md](07-scatter-plot-maps/output.md) |
+| 8 | [output.md](08-tableau-charts-maps/output.md) |
+| 9 | [output.md](09-dashboards/output.md) |
+| 10 | [output.md](10-storytelling/output.md) |
 
 ## Setup
 

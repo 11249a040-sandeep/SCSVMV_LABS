@@ -12,6 +12,8 @@ A Java `String` is an immutable sequence of characters. `substring(begin, end)` 
 | --- | --- |
 | Substrings of a string | [`SubstringsOfAString.java`](SubstringsOfAString.java) |
 | Replacing a string | [`Replace.java`](Replace.java) |
+| Reference substring exercise | [`SubstringOfString.java`](SubstringOfString.java) |
+| Reference replacement exercise | [`ReplacingOfSubstring.java`](ReplacingOfSubstring.java) |
 
 ## Algorithm
 
